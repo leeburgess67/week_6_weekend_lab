@@ -13,11 +13,12 @@ public class BedroomTest {
     Bedroom bedroom;
     Guest guest1;
     Guest guest2;
-
     ArrayList<Guest> guests;
 
     @Before
     public void before(){
+        guests = new ArrayList<>();
+        guests.add(guest1);
         bedroom = new Bedroom(2, guests, DOUBLE);
     }
 
@@ -25,4 +26,11 @@ public class BedroomTest {
     public void hasCapacity(){
         assertEquals(2, bedroom.getCapacity());
     }
+
+    @Test
+    public void hasGuests(){
+        assertEquals(guests, bedroom.getGuests());
+    }
+
+
 }
