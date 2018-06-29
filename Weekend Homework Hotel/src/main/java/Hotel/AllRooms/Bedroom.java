@@ -19,6 +19,8 @@ public class Bedroom extends Room {
         if (this.getGuests().size() == 0) {
             getGuests().add(guest);
         }
+        else {
+        }
 
 
     }

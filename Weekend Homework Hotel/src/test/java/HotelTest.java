@@ -64,7 +64,7 @@ public class HotelTest {
 
     @Test
     public void canFindBedroom(){
-        assertEquals(bedroom1, hotel.findBedroom(DOUBLE));
+        assertEquals(bedroom1, hotel.findBedroom(RoomType.DOUBLE));
     }
 
 }

@@ -1,4 +1,5 @@
 import Hotel.AllRooms.Bedroom;
+import Hotel.AllRooms.Room;
 import Hotel.AllRooms.RoomType;
 import Hotel.Guest.Guest;
 import org.junit.Before;
@@ -12,15 +13,20 @@ import static org.junit.Assert.assertEquals;
 public class BedroomTest {
 
     Bedroom bedroom;
+    Bedroom fullbedroom;
     Guest guest1;
     Guest guest2;
     ArrayList<Guest> guests;
 
     @Before
     public void before(){
+        guest1 = new Guest("Mr Smith");
+        guest2 = new Guest("Mrs Jones");
         guests = new ArrayList<>();
         guests.add(guest1);
         bedroom = new Bedroom(RoomType.DOUBLE, guests);
+        fullbedroom = new Bedroom(RoomType.SINGLE, guests);
+
     }
 
 
@@ -40,9 +46,16 @@ public class BedroomTest {
     }
 
     @Test
-    public void canCheckin(){
+    public void canCheckIn(){
         bedroom.checkIn(guest1);
         assertEquals(1, bedroom.getGuests().size());
+    }
+
+    @Test
+    public void cantCheckIn(){
+        fullbedroom.checkIn(guest2);
+        assertEquals(1, fullbedroom.getGuests().size());
+
     }
 
 
