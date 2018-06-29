@@ -32,7 +32,12 @@ public class ConferenceRoomTest {
 
     @Test
     public void hasCapacity(){
-        assertEquals(100, conferenceRoom.getRoomCapacity());
+        assertEquals(100.00, conferenceRoom.getRoomCapacity());
+    }
+
+    @Test
+    public void hasDailyRate(){
+        assertEquals(150.00, conferenceRoom.getDailyRate(), 1);
     }
 
 

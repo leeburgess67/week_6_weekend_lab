@@ -15,4 +15,8 @@ public class ConferenceRoom extends Room {
     public int getRoomCapacity() {
         return getRoomType().getCapacity();
     }
+
+    public double getDailyRate() {
+        return getRoomType().getDailyRate();
+    }
 }

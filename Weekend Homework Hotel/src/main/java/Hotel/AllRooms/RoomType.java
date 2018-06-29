@@ -7,8 +7,8 @@ public enum RoomType
     DOUBLE(2, 99.95, "Double Room"),
     TWIN(2, 99.95, "Twin Room"),
     FAMILY(4, 115.95,"Family Room"),
-    DININGROOM(50, 0, "Dining Room"),
-    CONFERENCEROOM(100, 0, "Conference Room");
+    DININGROOM(50, 0.00, "Dining Room"),
+    CONFERENCEROOM(100, 150.00, "Conference Room");
 
     private int capacity;
     private double dailyRate;
