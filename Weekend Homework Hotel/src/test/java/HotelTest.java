@@ -38,7 +38,14 @@ public class HotelTest {
     @Test
     public void hasBedrooms(){
         assertEquals(bedrooms, hotel.getBedrooms());
-
+    }
+  @Test
+    public void hasConferenceRooms(){
+        assertEquals(conferenceRooms, hotel.getConferenceRooms());
+    }
+  @Test
+    public void hasDiningRooms(){
+        assertEquals(diningRooms, hotel.getDiningRooms());
     }
 
 }
