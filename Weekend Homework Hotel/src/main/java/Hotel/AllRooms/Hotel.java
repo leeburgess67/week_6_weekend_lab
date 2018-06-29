@@ -10,7 +10,7 @@ public class Hotel {
     private ArrayList<Room> bedrooms;
     private ArrayList<Room> diningRooms;
     private ArrayList<Room> conferenceRooms;
-    private Room availableBedroom;
+    private Bedroom foundBedroom;
 
 
     public Hotel(ArrayList<Room> bedrooms, ArrayList<Room> diningRooms, ArrayList<Room> conferenceRooms) {
@@ -42,13 +42,15 @@ public class Hotel {
         return foundBedroom;
     }
 
+    publ
+
 
     public void checkIn(RoomType requestedRoomType, Guest guest) {
-        if (findBedroom(requestedRoomType) == availableBedroom) {
-            availableBedroom.getGuests().add(guest);
+        Bedroom foundBedroom = findBedroom(requestedRoomType);
+        foundBedroom.getGuests().add(guest);
 
-        }
     }
-
 }
+
+
 

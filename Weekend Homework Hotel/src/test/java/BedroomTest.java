@@ -47,13 +47,13 @@ public class BedroomTest {
 
     @Test
     public void canCheckIn(){
-        bedroom.checkIn(guest1);
+        bedroom.checkInBedroom(guest1);
         assertEquals(1, bedroom.getGuests().size());
     }
 
     @Test
     public void cantCheckIn(){
-        fullbedroom.checkIn(guest2);
+        fullbedroom.checkInBedroom(guest2);
         assertEquals(1, fullbedroom.getGuests().size());
 
     }

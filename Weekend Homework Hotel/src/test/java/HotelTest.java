@@ -13,6 +13,7 @@ public class HotelTest {
     Hotel hotel;
     Bedroom bedroom1;
     Bedroom bedroom2;
+    Bedroom emptyRoom;
     DiningRoom diningRoom1;
     ConferenceRoom conferenceRoom1;
     ConferenceRoom conferenceRoom2;
@@ -23,6 +24,7 @@ public class HotelTest {
     Guest guest2;
     Guest guest3;
     ArrayList guests;
+    ArrayList emptyGuestArray;
 
 
     @Before
@@ -40,11 +42,13 @@ public class HotelTest {
         diningRoom1 = new DiningRoom(DININGROOM, guests, "Excellent Eatery");
         conferenceRoom1 = new ConferenceRoom(CONFERENCEROOM, guests, "Conference Room 1");
         conferenceRoom2 = new ConferenceRoom(CONFERENCEROOM, guests, "Conference Room 2");
-
+        emptyGuestArray = new ArrayList<>();
+        emptyRoom = new Bedroom(SINGLE, emptyGuestArray);
         bedroom1 = new Bedroom(DOUBLE, guests);
         bedroom2 = new Bedroom(TWIN, guests);
         bedrooms.add(bedroom1);
         bedrooms.add(bedroom2);
+        bedrooms.add(emptyRoom);
 
         diningRooms.add(diningRoom1);
         conferenceRooms.add(conferenceRoom1);
@@ -70,13 +74,13 @@ public class HotelTest {
 
     @Test
     public void canCheckIn() {
-        hotel.checkIn(DOUBLE, guest1);
-        assertEquals(1, bedroom1.getGuests().size());
+        hotel.checkIn(RoomType.SINGLE, guest1);
+        assertEquals(1, emptyRoom.getGuests().size());
     }
 
     @Test
     public void canFindBedroom() {
-        assertEquals(bedroom1, hotel.findBedroom(RoomType.DOUBLE));
+        assertEquals(emptyRoom, hotel.findBedroom(RoomType.SINGLE));
     }
 
 }
