@@ -15,4 +15,7 @@ public class Hotel {
     }
 
 
+    public ArrayList<Room> getBedrooms() {
+        return this.bedrooms;
+    }
 }
