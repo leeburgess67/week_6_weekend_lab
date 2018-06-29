@@ -5,20 +5,20 @@ import Hotel.Guest.Guest;
 
 public abstract class Room {
 
-    private int capacity;
     private ArrayList <Guest> guests;
+    private RoomType roomType;
 
-    public Room(int capacity, ArrayList<Guest> guests) {
-        this.capacity = capacity;
+    public Room(RoomType roomType, ArrayList<Guest> guests) {
+        this.roomType = roomType;
         this.guests = guests;
     }
     
 
-    public int getCapacity() {
-        return capacity;
-    }
-
     public ArrayList getGuests() {
         return guests;
+    }
+
+    public RoomType getRoomType(){
+        return this.roomType;
     }
 }

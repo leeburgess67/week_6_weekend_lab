@@ -1,4 +1,5 @@
 import Hotel.AllRooms.Bedroom;
+import Hotel.AllRooms.RoomType;
 import Hotel.Guest.Guest;
 import org.junit.Before;
 import org.junit.Test;
@@ -19,17 +20,18 @@ public class BedroomTest {
     public void before(){
         guests = new ArrayList<>();
         guests.add(guest1);
-        bedroom = new Bedroom(2, guests, DOUBLE);
+        bedroom = new Bedroom(RoomType.DOUBLE, guests);
     }
 
-    @Test
-    public void hasCapacity(){
-        assertEquals(2, bedroom.getCapacity());
-    }
 
     @Test
     public void hasGuests(){
         assertEquals(guests, bedroom.getGuests());
+    }
+
+    @Test
+    public void hasCapacity(){
+        assertEquals(2, bedroom.getRoomCapacity());
     }
 
 
