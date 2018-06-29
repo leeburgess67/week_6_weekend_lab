@@ -14,4 +14,13 @@ public class Bedroom extends Room {
     public int getRoomCapacity(){
         return getRoomType().getCapacity();
     }
+
+    public void checkIn(Guest guest){
+        if (this.getGuests().size() == 0) {
+            getGuests().add(guest);
+        }
+
+
+    }
+
 }

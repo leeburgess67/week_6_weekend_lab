@@ -1,5 +1,8 @@
 package Hotel.AllRooms;
 
+import Hotel.Guest.Guest;
+import Hotel.AllRooms.*;
+
 import java.util.ArrayList;
 
 public class Hotel {
@@ -7,6 +10,8 @@ public class Hotel {
     private ArrayList<Room> bedrooms;
     private ArrayList<Room> diningRooms;
     private ArrayList<Room> conferenceRooms;
+    private Room availableBedroom;
+
 
     public Hotel(ArrayList<Room> bedrooms, ArrayList<Room> diningRooms, ArrayList<Room> conferenceRooms) {
         this.bedrooms = bedrooms;
@@ -26,4 +31,24 @@ public class Hotel {
     public ArrayList<Room> getDiningRooms() {
         return this.diningRooms;
     }
+
+    public Bedroom findBedroom(RoomType requestedRoomType) {
+        Bedroom foundBedroom = null;
+        for (Room bedroom : bedrooms)
+            if (requestedRoomType == bedroom.getRoomType())             {
+                foundBedroom = (Bedroom) bedroom;
+                }
+
+        return foundBedroom;
+    }
+
+
+    public void checkIn(RoomType requestedRoomType, Guest guest) {
+        if (findBedroom(requestedRoomType) == availableBedroom) {
+            availableBedroom.getGuests().add(guest);
+
+        }
+    }
+
 }
+

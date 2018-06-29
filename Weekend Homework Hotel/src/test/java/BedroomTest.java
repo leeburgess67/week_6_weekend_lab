@@ -34,6 +34,16 @@ public class BedroomTest {
         assertEquals(2, bedroom.getRoomCapacity());
     }
 
+    @Test
+    public void hasRoomType(){
+        assertEquals(DOUBLE, bedroom.getRoomType());
+    }
+
+    @Test
+    public void canCheckin(){
+        bedroom.checkIn(guest1);
+        assertEquals(1, bedroom.getGuests().size());
+    }
 
 
 

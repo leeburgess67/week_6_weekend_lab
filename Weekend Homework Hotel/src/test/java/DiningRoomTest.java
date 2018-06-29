@@ -23,6 +23,7 @@ public class DiningRoomTest {
             guests.add(guest1);
             guests.add(guest2);
             diningRoom = new DiningRoom(RoomType.DININGROOM, guests, "Excellent Eats");
+
         }
 
 
