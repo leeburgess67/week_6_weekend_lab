@@ -8,6 +8,8 @@ public class Guest {
         this.name = name;
     }
 
-    
 
+    public String hasName() {
+        return this.name;
+    }
 }
