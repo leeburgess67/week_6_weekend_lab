@@ -73,7 +73,7 @@ public class HotelTest {
     }
 
     @Test
-    public void canCheckIn() {
+    public void canCheckInEmptyRoom() {
         hotel.checkIn(RoomType.SINGLE, guest1);
         assertEquals(1, emptyRoom.getGuests().size());
     }
@@ -81,6 +81,17 @@ public class HotelTest {
     @Test
     public void canFindBedroom() {
         assertEquals(emptyRoom, hotel.findBedroom(RoomType.SINGLE));
+    }
+
+    @Test
+    public void isRoomEmtpy(){
+        assertEquals(true, hotel.isRoomEmpty(emptyRoom));
+    }
+
+    @Test
+    public void cantCheckInFullRoom(){
+        hotel.checkIn(RoomType.DOUBLE, guest2);
+        assertEquals(2, bedroom1.getGuests().size());
     }
 
 }

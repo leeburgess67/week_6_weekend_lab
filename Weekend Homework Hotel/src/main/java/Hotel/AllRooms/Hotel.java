@@ -42,12 +42,17 @@ public class Hotel {
         return foundBedroom;
     }
 
-    publ
+    public boolean isRoomEmpty(Room room){
+        if (room.getGuests().size() == 0) {return true;}
+        else { return false;}
+    }
+
 
 
     public void checkIn(RoomType requestedRoomType, Guest guest) {
         Bedroom foundBedroom = findBedroom(requestedRoomType);
-        foundBedroom.getGuests().add(guest);
+        if (isRoomEmpty(foundBedroom) == true) {
+        foundBedroom.getGuests().add(guest);} else { }
 
     }
 }
