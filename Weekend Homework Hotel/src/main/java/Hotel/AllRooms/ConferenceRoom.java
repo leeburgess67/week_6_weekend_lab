@@ -7,8 +7,12 @@ public class ConferenceRoom extends Room {
     private String name;
 
     public ConferenceRoom(RoomType roomType, ArrayList guests, String name){
-        super(roomType, guests);
+        super(roomType.CONFERENCEROOM, guests);
         this.name = name;
 
+    }
+
+    public int getRoomCapacity() {
+        return getRoomType().getCapacity();
     }
 }
