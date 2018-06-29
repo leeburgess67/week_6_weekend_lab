@@ -35,9 +35,9 @@ public class Hotel {
     public Bedroom findBedroom(RoomType requestedRoomType) {
         Bedroom foundBedroom = null;
         for (Room bedroom : bedrooms)
-            if (requestedRoomType == bedroom.getRoomType())             {
+            if (requestedRoomType == bedroom.getRoomType()) {
                 foundBedroom = (Bedroom) bedroom;
-                }
+            }
 
         return foundBedroom;
     }
