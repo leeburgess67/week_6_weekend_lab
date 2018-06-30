@@ -36,6 +36,7 @@ public class HotelTest {
 
         guest1 = new Guest("Mr Smith");
         guest2 = new Guest("Mrs Smith");
+        guest2 = new Guest("Mrs Leffe");
         guests.add(guest1);
         guests.add(guest2);
 
@@ -98,6 +99,11 @@ public class HotelTest {
     public void canCheckOutGuest(){
         hotel.checkOutGuest(guest1);
         assertEquals(0, bedroom2.getGuests().size());
+    }
+
+    @Test
+    public void canGetGuestsInRoom(){
+        assertEquals(guests,hotel.getGuestsInRoom(bedroom2) );
     }
 
 }

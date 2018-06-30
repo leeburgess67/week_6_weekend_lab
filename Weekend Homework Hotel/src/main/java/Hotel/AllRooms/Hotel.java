@@ -63,6 +63,18 @@ public class Hotel {
             else { }
 
         }
+
+        public ArrayList getGuestsInRoom(Room targetRoom) {
+            for (Room room : bedrooms)
+                if (room == targetRoom) {
+                    return targetRoom.getGuests();
+                } else {
+
+                }
+                return null;
+        }
+
+
     }
 
 
