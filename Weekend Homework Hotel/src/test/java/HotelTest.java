@@ -14,6 +14,7 @@ public class HotelTest {
     Bedroom bedroom1;
     Bedroom bedroom2;
     Bedroom emptyRoom;
+    Bedroom emptyRoom2;
     DiningRoom diningRoom1;
     ConferenceRoom conferenceRoom1;
     ConferenceRoom conferenceRoom2;
@@ -25,6 +26,7 @@ public class HotelTest {
     Guest guest3;
     ArrayList guests;
     ArrayList emptyGuestArray;
+    ArrayList <Room> emptyRooms = new ArrayList<>();
 
 
     @Before
@@ -33,6 +35,7 @@ public class HotelTest {
         diningRooms = new ArrayList<>();
         conferenceRooms = new ArrayList<>();
         guests = new ArrayList<Guest>();
+        ArrayList <Room> emptyRooms = new ArrayList<>();
 
         guest1 = new Guest("Mr Smith", 2);
         guest2 = new Guest("Mrs Booker", 2);
@@ -45,6 +48,7 @@ public class HotelTest {
         conferenceRoom2 = new ConferenceRoom(CONFERENCEROOM, guests, "Conference Room 2");
         emptyGuestArray = new ArrayList<>();
         emptyRoom = new Bedroom(SINGLE, emptyGuestArray);
+        emptyRoom2 = new Bedroom(DOUBLE, emptyGuestArray);
         bedroom1 = new Bedroom(DOUBLE, guests);
         bedroom2 = new Bedroom(TWIN, guests);
         bedrooms.add(bedroom1);
@@ -110,6 +114,11 @@ public class HotelTest {
     @Test
     public void canGetGuestsInRoom(){
         assertEquals(guests,hotel.getGuestsInRoom(bedroom2) );
+    }
+
+    @Test
+    public void canReturnVacantBedrooms(){
+        assertEquals(emptyRooms, hotel.getVacantRooms());
     }
 
 

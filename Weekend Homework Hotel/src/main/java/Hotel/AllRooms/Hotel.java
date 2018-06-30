@@ -1,9 +1,10 @@
 package Hotel.AllRooms;
 
 import Hotel.Guest.Guest;
-import Hotel.AllRooms.*;
 
 import java.util.ArrayList;
+
+import static com.sun.tools.internal.xjc.reader.Ring.add;
 
 public class Hotel {
 
@@ -11,6 +12,7 @@ public class Hotel {
     private ArrayList<Room> diningRooms;
     private ArrayList<Room> conferenceRooms;
     private Bedroom foundBedroom;
+    private ArrayList<Room> emptyRooms = new ArrayList<>();
 
 
     public Hotel(ArrayList<Room> bedrooms, ArrayList<Room> diningRooms, ArrayList<Room> conferenceRooms) {
@@ -42,42 +44,52 @@ public class Hotel {
         return foundBedroom;
     }
 
-    public boolean isRoomEmpty(Room room){
-        if (room.getGuests().size() == 0) {return true;}
-        else { return false;}
+    public boolean isRoomEmpty(Room room) {
+        if (room.getGuests().size() == 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
-
 
 
     public void checkIn(RoomType requestedRoomType, Guest guest) {
         Bedroom foundBedroom = findBedroom(requestedRoomType);
-        if (isRoomEmpty(foundBedroom) == true && foundBedroom.getRoomCapacity() >= guest.getNoOfGuests ()) {
-        foundBedroom.getGuests().add(guest);} else { }
+        if (isRoomEmpty(foundBedroom) == true && foundBedroom.getRoomCapacity() >= guest.getNoOfGuests()) {
+            foundBedroom.getGuests().add(guest);
+        } else {
+        }
 
     }
 
     public void checkOutGuest(Guest departingGuest) {
         for (Room room : bedrooms)
-            if (room.getGuests().contains(departingGuest))
-            { room.getGuests().clear(); }
-            else { }
-
-        }
-
-        public ArrayList getGuestsInRoom(Room targetRoom) {
-            for (Room room : bedrooms)
-                if (room == targetRoom) {
-                    return targetRoom.getGuests();
-                } else {
-
-                }
-                return null;
-        }
-
-
-
+            if (room.getGuests().contains(departingGuest)) {
+                room.getGuests().clear();
+            } else {
+            }
 
     }
+
+    public ArrayList getGuestsInRoom(Room targetRoom) {
+        for (Room room : bedrooms)
+            if (room == targetRoom) {
+                return targetRoom.getGuests();
+            } else {
+
+            }
+        return null;
+    }
+
+
+    public ArrayList<Room> getVacantRooms() {
+        for (Room room : bedrooms)
+            if (room.getGuests().size() == 0) {
+            emptyRooms.add(room);
+            }
+        return emptyRooms;
+    }
+}
 
 
 
