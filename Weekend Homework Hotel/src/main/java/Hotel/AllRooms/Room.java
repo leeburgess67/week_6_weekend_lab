@@ -21,4 +21,8 @@ public abstract class Room {
     public RoomType getRoomType(){
         return this.roomType;
     }
+
+    public void checkOut(Guest guest){
+
+    }
 }

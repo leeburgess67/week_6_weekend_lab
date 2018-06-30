@@ -55,7 +55,16 @@ public class Hotel {
         foundBedroom.getGuests().add(guest);} else { }
 
     }
-}
+
+    public void checkOutGuest(Guest departingGuest) {
+        for (Room room : bedrooms)
+            if (room.getGuests().contains(departingGuest))
+            { room.getGuests().clear(); }
+            else { }
+
+        }
+    }
+
 
 
 
