@@ -51,7 +51,7 @@ public class Hotel {
 
     public void checkIn(RoomType requestedRoomType, Guest guest) {
         Bedroom foundBedroom = findBedroom(requestedRoomType);
-        if (isRoomEmpty(foundBedroom) == true) {
+        if (isRoomEmpty(foundBedroom) == true && foundBedroom.getRoomCapacity() >= guest.getNoOfGuests ()) {
         foundBedroom.getGuests().add(guest);} else { }
 
     }
@@ -73,6 +73,8 @@ public class Hotel {
                 }
                 return null;
         }
+
+
 
 
     }

@@ -34,9 +34,9 @@ public class HotelTest {
         conferenceRooms = new ArrayList<>();
         guests = new ArrayList<Guest>();
 
-        guest1 = new Guest("Mr Smith");
-        guest2 = new Guest("Mrs Smith");
-        guest2 = new Guest("Mrs Leffe");
+        guest1 = new Guest("Mr Smith", 2);
+        guest2 = new Guest("Mrs Booker", 2);
+        guest3 = new Guest("Mrs Leffe", 1);
         guests.add(guest1);
         guests.add(guest2);
 
@@ -75,8 +75,14 @@ public class HotelTest {
 
     @Test
     public void canCheckInEmptyRoom() {
-        hotel.checkIn(RoomType.SINGLE, guest1);
+        hotel.checkIn(RoomType.SINGLE, guest3);
         assertEquals(1, emptyRoom.getGuests().size());
+    }
+
+    @Test
+    public void cantCheckInIfPartyBiggerThanCapacity(){
+        hotel.checkIn(RoomType.SINGLE, guest1);
+        assertEquals(0, emptyRoom.getGuests().size());
     }
 
     @Test
@@ -105,5 +111,6 @@ public class HotelTest {
     public void canGetGuestsInRoom(){
         assertEquals(guests,hotel.getGuestsInRoom(bedroom2) );
     }
+
 
 }

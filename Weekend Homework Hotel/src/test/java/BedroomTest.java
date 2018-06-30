@@ -20,8 +20,8 @@ public class BedroomTest {
 
     @Before
     public void before(){
-        guest1 = new Guest("Mr Smith");
-        guest2 = new Guest("Mrs Jones");
+        guest1 = new Guest("Mr Smith", 2);
+        guest2 = new Guest("Mrs Jones", 2);
         guests = new ArrayList<>();
         guests.add(guest1);
         bedroom = new Bedroom(RoomType.DOUBLE, guests);
