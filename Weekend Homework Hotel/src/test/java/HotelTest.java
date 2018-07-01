@@ -10,23 +10,23 @@ import static org.junit.Assert.assertEquals;
 
 public class HotelTest {
 
-    Hotel hotel;
-    Bedroom bedroom1;
-    Bedroom bedroom2;
-    Bedroom emptyRoom;
-    Bedroom emptyRoom2;
-    DiningRoom diningRoom1;
-    ConferenceRoom conferenceRoom1;
-    ConferenceRoom conferenceRoom2;
-    ArrayList<Room> bedrooms;
-    ArrayList<Room> diningRooms;
-    ArrayList<Room> conferenceRooms;
-    Guest guest1;
-    Guest guest2;
-    Guest guest3;
-    ArrayList guests;
-    ArrayList emptyGuestArray;
-    ArrayList <Room> emptyRooms = new ArrayList<>();
+    private Hotel hotel;
+    private Bedroom bedroom1;
+    private Bedroom bedroom2;
+    private Bedroom emptyRoom;
+    private Bedroom emptyRoom2;
+    private DiningRoom diningRoom1;
+    private ConferenceRoom conferenceRoom1;
+    private ConferenceRoom conferenceRoom2;
+    private ArrayList<Room> bedrooms;
+    private ArrayList<Room> diningRooms;
+    private ArrayList<Room> conferenceRooms;
+    private Guest guest1;
+    private Guest guest2;
+    private Guest guest3;
+    private ArrayList guests;
+    private ArrayList emptyGuestArray;
+    private ArrayList <Room> emptyRooms = new ArrayList<>();
 
 
     @Before
@@ -121,5 +121,10 @@ public class HotelTest {
 //        assertEquals(emptyRooms, hotel.getVacantRooms());
 //    }
 
+
+    @Test
+    public void canBookTableInDiningRoomIfNotFull(){
+        hotel.bookTableInDiningRoom(guest1);
+    }
 
 }

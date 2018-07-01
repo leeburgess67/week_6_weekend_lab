@@ -12,3 +12,4 @@ public class DiningRoom extends Room {
         return getRoomType().getCapacity();
     }
 }
+

@@ -31,13 +31,12 @@ public class Hotel {
     }
 
     public ArrayList<Room> getDiningRooms() {
-        return this.diningRooms;
-    }
+        return this.diningRooms; }
 
     public Bedroom findBedroom(RoomType requestedRoomType) {
         Bedroom foundBedroom = null;
-        for (Room bedroom : bedrooms)
-            if (requestedRoomType == bedroom.getRoomType()) {
+            for (Room bedroom : bedrooms)
+             if (requestedRoomType == bedroom.getRoomType()) {
                 foundBedroom = (Bedroom) bedroom;
             }
 
@@ -45,12 +44,7 @@ public class Hotel {
     }
 
     public boolean isRoomEmpty(Room room) {
-        if (room.getGuests().size() == 0) {
-            return true;
-        } else {
-            return false;
-        }
-    }
+        return (room.getGuests().size() == 0); }
 
 
     public void checkIn(RoomType requestedRoomType, Guest guest) {
@@ -88,6 +82,16 @@ public class Hotel {
             emptyRooms.add(room);
             }
         return emptyRooms;
+    }
+
+    public void bookTableInDiningRoom(Guest leadGuest) {
+            for (Room diningRoom : diningRooms) {
+                if (diningRoom.getGuests().size() <= (diningRoom.getRoomType().getCapacity() - leadGuest.getNoOfGuests())) {
+                    diningRoom.getGuests().add(leadGuest);
+                }
+
+
+        }
     }
 }
 
