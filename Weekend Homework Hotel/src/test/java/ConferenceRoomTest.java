@@ -17,30 +17,27 @@ public class ConferenceRoomTest {
     ArrayList<Guest> guests;
 
     @Before
-    public void before(){
+    public void before() {
         guests = new ArrayList<>();
         guests.add(guest1);
         guests.add(guest2);
         conferenceRoom = new ConferenceRoom(RoomType.CONFERENCEROOM, guests, "Conference Room 1");
     }
 
-
     @Test
-    public void hasGuests(){
+    public void hasGuests() {
         assertEquals(guests, conferenceRoom.getGuests());
     }
 
     @Test
-    public void hasCapacity(){
+    public void hasCapacity() {
         assertEquals(100.00, conferenceRoom.getRoomCapacity());
     }
 
     @Test
-    public void hasDailyRate(){
+    public void hasDailyRate() {
         assertEquals(150.00, conferenceRoom.getDailyRate(), 1);
     }
-
-
 
 
 }
