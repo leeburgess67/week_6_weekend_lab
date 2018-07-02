@@ -120,6 +120,7 @@ public class HotelTest {
     public void canReturnVacantBedrooms(){
         assertEquals(hotel.emptyRooms, hotel.getVacantRooms());
     }
+    //Why did I have to make emptyRooms public in Hotel class? Shouldn't it be accessible from here?
 
 
     @Test
