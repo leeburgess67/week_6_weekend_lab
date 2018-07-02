@@ -12,7 +12,7 @@ public class Hotel {
     private ArrayList<Room> diningRooms;
     private ArrayList<Room> conferenceRooms;
     private Bedroom foundBedroom;
-    private ArrayList<Room> emptyRooms = new ArrayList<>();
+    public ArrayList<Room> emptyRooms = new ArrayList<>();
 
 
     public Hotel(ArrayList<Room> bedrooms, ArrayList<Room> diningRooms, ArrayList<Room> conferenceRooms) {

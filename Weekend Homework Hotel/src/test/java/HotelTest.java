@@ -116,10 +116,10 @@ public class HotelTest {
         assertEquals(guests,hotel.getGuestsInRoom(bedroom2) );
     }
 
-//    @Test
-//    public void canReturnVacantBedrooms(){
-//        assertEquals(emptyRooms, hotel.getVacantRooms());
-//    }
+    @Test
+    public void canReturnVacantBedrooms(){
+        assertEquals(hotel.emptyRooms, hotel.getVacantRooms());
+    }
 
 
     @Test
