@@ -10,7 +10,6 @@ public class Guest {
         this.noOfGuests = noOfGuests;
     }
 
-
     public String hasName() {
         return this.leadName;
     }

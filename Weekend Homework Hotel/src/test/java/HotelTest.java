@@ -26,8 +26,6 @@ public class HotelTest {
     private Guest guest3;
     private ArrayList guests;
     private ArrayList emptyGuestArray;
-    private ArrayList <Room> emptyRooms = new ArrayList<>();
-
 
     @Before
     public void before() {

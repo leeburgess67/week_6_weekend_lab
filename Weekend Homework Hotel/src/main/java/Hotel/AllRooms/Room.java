@@ -12,7 +12,6 @@ public abstract class Room {
         this.roomType = roomType;
         this.guests = guests;
     }
-    
 
     public ArrayList getGuests() {
         return guests;
